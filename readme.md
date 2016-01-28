@@ -1,16 +1,35 @@
-# Readme
+# <span style="color:maroon;text-decoration:underline;letter-spacing:5px;"> Readme </span>
+<style>
+p {
+    text-indent: 30px;
+}
+li p {
+	text-indent: 0px;
+}
+</style>
 
+## Motivation
 You have probably completed the Reproducible research final project, where we were supposed to analyse the U.S. National Oceanic and Atmospheric Administration's [(NOAA)](https://www.ncdc.noaa.gov/stormevents/details.jsp) storm database. The data can be found [here](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2), and my analysis [here.](https://adromine.github.io/US-Storm-database-analysis/)   
 
 Now one problem one faces when analysing this database is to group the different storm types together. NOAA has officially recognised 48 different event types, but due to data entry errors, and possibly other reasons, there are more than 900 unique events! Naturally these need to be grouped together into smaller and more manageable groups, and that is where text clustering comes in, a technique used in data mining to cluster similar strings together.   
 
-This app showcases various methods of string clustering, using the storm types from the above mentioned database.   
+## App's functioning
+This app showcases various methods of string clustering using the storms dataset by default.   
 
-* You can select the algorithm which will be used to group strings together based on similarity, with different algorithms having different criteria for makes the strings similar. 
-* You can then select the number of clusters to group the strings into. 
+* You can select the algorithm which will be used to group strings together based on similarity, with different algorithms having different criteria for deciding what makes the strings similar. 
+* You can then select the number of clusters to group the strings into (uses hierarchical clustering). 
 * Then finally, out of the created clusters, look at one cluster at a time in the table.  
+* And if you have your own strings that you want to try clustering, you can upload a csv file containing them (it should have a header (can be anything), and have all the strings in the first column). The default storms dataset would be used if you do not upload a file.    
 
-By default, the app uses the Jaro distance algorithm (which seems to give the best result for this example) to group the strings into 80 groups, and then displays the strings grouped together in the first cluster.  
+1. The first tab shows the clustered strings, one cluster at a time.
+2. The second tab shows this readme.
+3. The third tab shows all the strings along with their clusters.
+
+
+
+By default, the app uses the Jaro distance algorithm (which seems to give the best result for the default example) to group the strings into 80 groups, and then displays the strings grouped together in the first cluster.    
+
+You can find the full code in my Github repository here : https://github.com/AdroMine/StringClustering 
 
 
 ### Algorithms and their brief explanation
@@ -44,4 +63,4 @@ By default, the app uses the Jaro distance algorithm (which seems to give the be
 * The **Optimal String Alignment distance** (method='osa') is like the Levenshtein distance but also allows transposition of adjacent characters. Here, each substring may be edited only once. (For example, a character cannot be transposed twice to move it forward in the string).   
 
 
-* For the **soundex** distance (method='soundex'), strings are translated to a soundex code (see phonetic for a specification). The distance between strings is 0 when they have the same soundex code, otherwise 1. Note that soundex recoding is only meaningful for characters in the ranges a-z and A-Z. 
+* For the **soundex** distance (method='soundex'), strings are translated to a soundex code (see phonetic for a specification). The distance between strings is 0 when they have the same soundex code, otherwise 1. Note that soundex recoding is only meaningful for characters in the ranges a-z and A-Z.

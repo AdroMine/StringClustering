@@ -6,6 +6,10 @@ shinyUI(fluidPage(
      br(),
      sidebarLayout(
           sidebarPanel(
+               shiny::fileInput('file1','Choose your own CSV file',
+                                accept = c('text/csv',
+                                           'text/comma-separated-values,text/plain',
+                                           '.csv')),
                helpText("Select the algorithm that will be used to cluster the strings together"),
                selectInput("method",label = "String Clustering Algorithm",
                            choices = list("Jaro-Winker" = "jw","Levenshtein" = "lv", 
@@ -27,7 +31,9 @@ shinyUI(fluidPage(
                                 br(),
                                 DT::dataTableOutput("typeTable")
                            ),
-                           tabPanel("Readme",includeMarkdown("readme.md")))
+                           tabPanel("Readme",includeMarkdown("readme.md")),
+                           tabPanel("All Clusters",
+                                    DT::dataTableOutput("fullTable")))
           )
      )
      
