@@ -1,12 +1,5 @@
 # <span style="color:maroon;text-decoration:underline;letter-spacing:5px;"> Readme </span>
-<style>
-p {
-    text-indent: 30px;
-}
-li p {
-	text-indent: 0px;
-}
-</style>
+
 
 ## Motivation
 You have probably completed the Reproducible research final project, where we were supposed to analyse the U.S. National Oceanic and Atmospheric Administration's [(NOAA)](https://www.ncdc.noaa.gov/stormevents/details.jsp) storm database. The data can be found [here](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2), and my analysis [here.](https://adromine.github.io/US-Storm-database-analysis/)   
